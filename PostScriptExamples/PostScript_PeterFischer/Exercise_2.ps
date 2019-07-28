@@ -1,0 +1,20 @@
+%!PS
+/x 10 def % 
+/y 10 def
+/d 60 def
+/s 100 def
+/h { s d sin mul } bind def
+/w 10 def
+ x y moveto
+ s 0 rlineto
+ s 2 div neg h rlineto
+closepath
+w setlinewidth
+stroke
+
+/r { s 2 div d cos mul d sin div } bind def
+ x s 2 div add y r add r w 2 div sub 0 360 arc 
+ 1 0 0 setrgbcolor
+ fill
+ 
+showpage
